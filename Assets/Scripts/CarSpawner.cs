@@ -35,8 +35,8 @@ public class CarSpawner : MonoBehaviour
 
     void Start()
     {
-        _traficController.RedLight.AddListener(StopSpawning);
-        _traficController.GreenLight.AddListener(StartSpawning);
+        _traficController.CarRedLight.AddListener(StopSpawning);
+        _traficController.CarGreenLight.AddListener(StartSpawning);
     }
 
     private void Update()
@@ -82,7 +82,7 @@ public class CarSpawner : MonoBehaviour
             carScript.OnRedLight();
         }
 
-        _traficController.GreenLight.AddListener(carScript.OnGreenLight);
-        _traficController.RedLight.AddListener(carScript.OnRedLight);
+        _traficController.CarGreenLight.AddListener(carScript.OnGreenLight);
+        _traficController.CarRedLight.AddListener(carScript.OnRedLight);
     }
 }
