@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Car
   - CrossWalk
+  - Store
   layers:
   - Default
   - TransparentFX

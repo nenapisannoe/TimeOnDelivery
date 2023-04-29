@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nena/GameOver.unity
     guid: a80ee2134256e9541bf38f6aa01f39fe
+  - enabled: 1
+    path: Assets/Scenes/nena/You win.unity
+    guid: dbef7a9a02fa2f14b88bf02f75820711
   m_configObjects: {}
