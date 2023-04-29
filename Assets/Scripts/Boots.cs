@@ -8,8 +8,11 @@ using UnityEngine.UI;
 public class Boots : MonoBehaviour
 {
     [SerializeField] private Image bootsIcon;
+<<<<<<< HEAD
     [SerializeField] bool canJump = false;
     [SerializeField] private float jump = 12f;
+=======
+>>>>>>> parent of 0ced3f3 (added line & working on boots)
 
     private void Start()
     {
@@ -20,24 +23,19 @@ public class Boots : MonoBehaviour
     {
         if (this.enabled)
         {
+            //Debug.Log(other.name);
+            //Debug.Log(gameObject.name);
             if (other.CompareTag("JumpZone"))
             {
+                Debug.Log("collidedJump");
                 var tempColor = bootsIcon.color;
                 tempColor.a = 1f;
                 bootsIcon.color = tempColor;
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
-                {
-                    Debug.Log(hit.transform.tag);
-                    if (hit.transform.tag == "CrossWalk")
-                    {
-                        canJump = true;
-                    }
-                }
             }
         }
     }
 
+<<<<<<< HEAD
     private void Update()
     {
         if (canJump && Input.GetKeyDown(KeyCode.E))
@@ -50,17 +48,12 @@ public class Boots : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> parent of 0ced3f3 (added line & working on boots)
     private void OnTriggerExit(Collider other)
     {
-        if (this.enabled)
-        {
-            if (other.CompareTag("JumpZone"))
-            {
-                var tempColor = bootsIcon.color;
-                tempColor.a = 0.5f;
-                bootsIcon.color = tempColor;
-            }
-            canJump = false;
-        }
+        var tempColor = bootsIcon.color;
+        tempColor.a = 0.5f;
+        bootsIcon.color = tempColor;
     }
 }
