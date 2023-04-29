@@ -73,7 +73,7 @@ public class CarSpawner : MonoBehaviour
 
     private void ConfigureCar(CarScript carScript)
     {
-        if (_traficController.Green)
+        if (_traficController.CarGreen)
         {
             carScript.OnGreenLight();
         }
