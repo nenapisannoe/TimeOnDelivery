@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _carPrefab;
+    [SerializeField] private GameObject[] _carPrefabs;
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private bool _shouldSpawnPeriodically = true;
     [SerializeField] private float _spawningDelayInSeconds = 2.0f;
@@ -50,6 +50,9 @@ public class CarSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        Instantiate(_carPrefab, _spawnPosition);
+        var index = Random.Range(0, _carPrefabs.Length);
+        var prefab = _carPrefabs[index];
+
+        Instantiate(prefab, _spawnPosition);
     }
 }
