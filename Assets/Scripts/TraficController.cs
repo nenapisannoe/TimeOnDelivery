@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class TraficController : MonoBehaviour
 {
-    public UnityEvent GreenLight { get; private set; } = new UnityEvent();
-    public UnityEvent RedLight { get; private set; } = new UnityEvent();
+    public UnityEvent CarGreenLight { get; private set; } = new UnityEvent();
+    public UnityEvent CarRedLight { get; private set; } = new UnityEvent();
 
     [SerializeField] private bool _green = true;
 
@@ -36,10 +36,10 @@ public class TraficController : MonoBehaviour
     {
         if (_green)
         {
-            GreenLight.Invoke();
+            CarGreenLight.Invoke();
         } else
         {
-            RedLight.Invoke();
+            CarRedLight.Invoke();
         }
     }
 
