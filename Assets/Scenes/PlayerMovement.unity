@@ -664,7 +664,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1012255018
 MonoBehaviour:
@@ -678,6 +678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94235ce8d60ec7a4f8a9fc2362fb51a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _green: 1
+  _greenLightSeconds: 5
+  _redLightSeconds: 5
 --- !u!1001 &1039026927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,7 +778,7 @@ Transform:
   - {fileID: 457299275}
   - {fileID: 759664261}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531113324
 GameObject:
@@ -840,7 +843,7 @@ Transform:
   - {fileID: 1531113325}
   - {fileID: 878068217}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1722004594
 MonoBehaviour:
@@ -873,6 +876,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 1531113325}
   _shouldSpawnPeriodically: 1
   _spawningDelayInSeconds: 2
+  _traficController: {fileID: 1012255018}
 --- !u!1001 &1876007644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1303,6 +1307,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 95819563}
   _shouldSpawnPeriodically: 1
   _spawningDelayInSeconds: 2
+  _traficController: {fileID: 1012255018}
 --- !u!4 &2123483144
 Transform:
   m_ObjectHideFlags: 0
@@ -1318,7 +1323,7 @@ Transform:
   - {fileID: 95819563}
   - {fileID: 424455913}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2132150934
 GameObject:
