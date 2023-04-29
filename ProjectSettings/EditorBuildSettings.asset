@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/nena/Timer.unity
+    guid: aa6c368221d2a1849b109ca55457d71b
+  - enabled: 1
+    path: Assets/Scenes/nena/GameOver.unity
+    guid: a80ee2134256e9541bf38f6aa01f39fe
   m_configObjects: {}
