@@ -9,6 +9,7 @@ TagManager:
   - Store
   - Buff
   - JumpZone
+  - Line
   layers:
   - Default
   - TransparentFX
