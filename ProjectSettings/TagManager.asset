@@ -8,11 +8,8 @@ TagManager:
   - CrossWalk
   - Store
   - Buff
-<<<<<<< HEAD
   - JumpZone
   - Line
-=======
->>>>>>> parent of 0ced3f3 (added line & working on boots)
   layers:
   - Default
   - TransparentFX

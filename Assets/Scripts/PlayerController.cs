@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,8 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private float _speed = 8.0f;
     [SerializeField] private float _rotationSpeed = 0.15f;
     [SerializeField] private CharacterController _characterController;
-<<<<<<< HEAD
     [SerializeField] private float slowering = 2.0f;
     private bool slowed = false;
-=======
->>>>>>> parent of 0ced3f3 (added line & working on boots)
 
     private Vector2 _move;
 
@@ -56,7 +54,6 @@ public class PlayerController: MonoBehaviour
             Debug.Log("End of the game");
         }
     }
-<<<<<<< HEAD
 
     private void OnTriggerEnter(Collider other)
     {
@@ -78,6 +75,4 @@ public class PlayerController: MonoBehaviour
             slowed = false;
         }
     }
-=======
->>>>>>> parent of 0ced3f3 (added line & working on boots)
 }
