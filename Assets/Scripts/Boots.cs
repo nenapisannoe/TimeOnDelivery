@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class Boots : MonoBehaviour
 {
     [SerializeField] private Image bootsIcon;
     [SerializeField] bool canJump = false;
+    [SerializeField] private float jump = 12f;
 
     private void Start()
     {
@@ -40,9 +42,11 @@ public class Boots : MonoBehaviour
     {
         if (canJump && Input.GetKeyDown(KeyCode.E))
         {
-            gameObject.transform.position = Vector3.right * 10f;
+            //gameObject.transform.position = transform.position + transform.forward;
+            transform.Translate(transform.forward*jump, Space.World);
             canJump = false;
             bootsIcon.gameObject.SetActive(false);
+            this.enabled = false;
         }
     }
 
