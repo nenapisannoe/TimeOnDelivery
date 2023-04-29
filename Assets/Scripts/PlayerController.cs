@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private float _speed = 8.0f;
     [SerializeField] private float _rotationSpeed = 0.15f;
     [SerializeField] private CharacterController _characterController;
+    private bool slowed = false;
 
     private Vector2 _move;
 
@@ -49,6 +51,27 @@ public class PlayerController: MonoBehaviour
         if (colissionGameObjectTag == "Car")
         {
             Debug.Log("End of the game");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Line")
+        {
+            if (!slowed)
+            {
+                _speed = _speed / 2.0f;
+                slowed = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Line")
+        {
+            _speed = 8.0f;
+            slowed = false;
         }
     }
 }
