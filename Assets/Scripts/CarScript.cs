@@ -39,6 +39,11 @@ public class CarScript : MonoBehaviour
 
     bool ShouldStop(RaycastHit hit, Vector3 movement)
     {
+        if (hit.collider == null)
+        {
+            return true;
+        }
+
         var hitObjectTag = hit.collider.tag;
         
         if (hitObjectTag == "CrossWalk")

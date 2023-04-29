@@ -31,4 +31,17 @@ public class PlayerController: MonoBehaviour
 
         transform.Translate(movement * _speed * Time.deltaTime, Space.World);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider == null)
+            return;
+
+        var colissionGameObjectTag = collision.collider.tag;
+
+        if (colissionGameObjectTag == "Car")
+        {
+            Debug.Log("End of the game");
+        }
+    }
 }
