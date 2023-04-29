@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface Buff
 {
-    
+    void PickUpBuff();
+    void UseBuff();
 }
