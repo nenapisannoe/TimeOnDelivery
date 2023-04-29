@@ -10,8 +10,6 @@ public class CarScript : MonoBehaviour
 
     public bool Stoped { get; private set; } = false;
 
-    public const float CROSSWALK_WIDTH = 4;
-
     void Update()
     {
         if (!_shouldMove)
@@ -50,7 +48,8 @@ public class CarScript : MonoBehaviour
         
         if (hitObjectTag == "CrossWalk")
         {
-            return hit.distance < movement.magnitude + CROSSWALK_WIDTH;
+            var crossWalkWidth = 3;
+            return hit.distance < movement.magnitude + crossWalkWidth;
         }
 
         if (hitObjectTag == "Car")

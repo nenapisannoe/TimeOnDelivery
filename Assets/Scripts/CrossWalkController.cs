@@ -7,48 +7,25 @@ public class CrossWalkController : MonoBehaviour
     [SerializeField] TraficController _traficController;
     [SerializeField] private Collider[] _playerStopers;
 
-    [SerializeField] private Light[] _pedestrianGreenLights;
-    [SerializeField] private Light[] _pedestrianRedLights;
-
     private void Start()
     {
-        _traficController.PedestrianRedLight.AddListener(OnRedLight);
-        _traficController.PedestrianGreenLight.AddListener(OnGreenLight);
+        _traficController.CarRedLight.AddListener(DisableCollider);
+        _traficController.CarGreenLight.AddListener(EnableCollider);
     }
 
-    public void OnGreenLight()
-    {
-        foreach (Collider collider in _playerStopers)
-        {
-            collider.enabled = false;
-        }
-
-        foreach (Light light in _pedestrianGreenLights)
-        {
-            light.enabled = true;
-        }
-
-        foreach (Light light in _pedestrianRedLights)
-        {
-            light.enabled = false;
-        }
-    }
-
-    public void OnRedLight()
+    public void EnableCollider()
     {
         foreach (Collider collider in _playerStopers)
         {
             collider.enabled = true;
         }
+    }
 
-        foreach (Light light in _pedestrianRedLights)
+    public void DisableCollider()
+    {
+        foreach (Collider collider in _playerStopers)
         {
-            light.enabled = true;
-        }
-
-        foreach (Light light in _pedestrianGreenLights)
-        {
-            light.enabled = false;
+            collider.enabled = false;
         }
     }
 }

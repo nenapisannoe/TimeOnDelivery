@@ -8,17 +8,12 @@ public class TraficController : MonoBehaviour
     public UnityEvent CarGreenLight { get; private set; } = new UnityEvent();
     public UnityEvent CarRedLight { get; private set; } = new UnityEvent();
 
-    public UnityEvent PedestrianGreenLight { get; private set; } = new UnityEvent();
-    public UnityEvent PedestrianRedLight { get; private set; } = new UnityEvent();
-
-    [SerializeField] private bool _pedestrianGreen = false;
+    [SerializeField] private bool _green = true;
 
     [SerializeField] private float _greenLightSeconds = 10;
     [SerializeField] private float _redLightSeconds = 10;
 
-    public bool PedestrianGreen { get { return _pedestrianGreen; } }
-
-    public bool CarGreen { get { return !_pedestrianGreen; } }
+    public bool Green { get { return _green; } }
 
     void Start()
     {
@@ -33,25 +28,23 @@ public class TraficController : MonoBehaviour
 
             yield return new WaitForSeconds(GetCurrentLightLatency());
 
-            _pedestrianGreen = !_pedestrianGreen;
+            _green = !_green;
         }
     }
 
     private void SwitchLight()
     {
-        if (_pedestrianGreen)
-        {
-            CarRedLight.Invoke();
-            PedestrianGreenLight.Invoke();
-        } else
+        if (_green)
         {
             CarGreenLight.Invoke();
-            PedestrianRedLight.Invoke();
+        } else
+        {
+            CarRedLight.Invoke();
         }
     }
 
     private float GetCurrentLightLatency()
     {
-        return _pedestrianGreen ? _greenLightSeconds : _redLightSeconds;
+        return _green ? _greenLightSeconds : _redLightSeconds;
     }
 }
