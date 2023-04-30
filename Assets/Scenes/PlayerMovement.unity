@@ -1587,6 +1587,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7737135222240804453, guid: bd0b648374c74944eb9fec5eb5075126, type: 3}
+      propertyPath: _maximumDistanceToCrossWalk
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9023659486852960169, guid: bd0b648374c74944eb9fec5eb5075126, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2171,6 +2175,14 @@ PrefabInstance:
       propertyPath: _pedestrianGreen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7600117447969777320, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600117447969777323, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7600117448082056275, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2218,6 +2230,14 @@ PrefabInstance:
     - target: {fileID: 7600117448082056287, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
       propertyPath: m_Name
       value: Cross Walk 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600117448325182785, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600117448325182796, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
