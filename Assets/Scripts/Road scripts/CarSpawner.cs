@@ -17,7 +17,7 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] private float _spawningDelayInSeconds = 2.0f;
 
     // Trafic controller which controls car movement and spawning by trafic light evenets
-    [SerializeField] private TraficController _traficController;
+    [SerializeField] private TraficController _closestTraficController;
 
     private bool _delayEnded = true;
 
@@ -43,8 +43,15 @@ public class CarSpawner : MonoBehaviour
 
     void Start()
     {
-        _traficController.CarRedLight.AddListener(StopSpawning);
-        _traficController.CarGreenLight.AddListener(StartSpawning);
+        if (_closestTraficController.CarGreen)
+        {
+            StartSpawning();
+        } else
+        {
+            StopSpawning();
+        }
+        _closestTraficController.CarRedLight.AddListener(StopSpawning);
+        _closestTraficController.CarGreenLight.AddListener(StartSpawning);
     }
 
     private void Update()
@@ -78,18 +85,6 @@ public class CarSpawner : MonoBehaviour
 
     private void ConfigureCar(CarScript carScript)
     {
-        if (_traficController.CarGreen)
-        {
-            carScript.OnGreenLight();
-        }
-        else
-        {
-            carScript.OnRedLight();
-        }
-
-        _traficController.CarGreenLight.AddListener(carScript.OnGreenLight);
-        _traficController.CarRedLight.AddListener(carScript.OnRedLight);
-
         carScript.SetPaths(_carPathes, _isCarPathesLooped);
     }
 }

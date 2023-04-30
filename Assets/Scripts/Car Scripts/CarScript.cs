@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CarScript : CarFollowingPath
 {
-    private bool _shouldMove = false;
+    [SerializeField] private float _carWidth = 1.25f;
+
+    public float CarWidth { get { return _carWidth; } }
 
     public bool Stoped { get; private set; } = false;
 
@@ -12,14 +14,7 @@ public class CarScript : CarFollowingPath
 
     void Update()
     {
-        if (!_shouldMove)
-        {
-            MoveToCrossWalk();
-        }
-        else
-        {
-            Move();
-        }
+        MoveToCrossWalk();
     }
 
     void MoveToCrossWalk()
@@ -48,7 +43,12 @@ public class CarScript : CarFollowingPath
         
         if (hitObjectTag == "CrossWalk")
         {
-            return hit.distance < movement.magnitude + CROSSWALK_WIDTH;
+            TraficController traficController = hit.collider.gameObject.GetComponent<TraficController>();
+
+            if (traficController == null)
+                return false;
+
+            return !traficController.CarGreen && hit.distance < movement.magnitude + CROSSWALK_WIDTH;
         }
 
         if (hitObjectTag == "Car")
@@ -59,19 +59,9 @@ public class CarScript : CarFollowingPath
                 return true;
             }
 
-            return nextCar.Stoped && (hit.distance < movement.magnitude);
+            return nextCar.Stoped && (hit.distance < movement.magnitude + nextCar.CarWidth);
         }
 
         return false;
-    }
-
-    public void OnGreenLight()
-    {
-        _shouldMove = true;
-    }
-
-    public void OnRedLight()
-    {
-        _shouldMove = false;
     }
 }

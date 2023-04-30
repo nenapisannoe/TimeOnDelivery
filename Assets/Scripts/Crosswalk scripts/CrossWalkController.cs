@@ -12,16 +12,37 @@ public class CrossWalkController : MonoBehaviour
 
     private void Start()
     {
+        if (_traficController.PedestrianGreen)
+        {
+            OnGreenLight();
+        }
+        else
+        {
+            OnRedLight();
+        }
         _traficController.PedestrianRedLight.AddListener(OnRedLight);
         _traficController.PedestrianGreenLight.AddListener(OnGreenLight);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player" && !_traficController.PedestrianGreen)
+        {
+            LetPlayerGo();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player" && !_traficController.PedestrianGreen)
+        {
+            StartCoroutine(StopPlayerFromGoingAfterWait());
+        }
+    }
+
     public void OnGreenLight()
     {
-        foreach (Collider collider in _playerStopers)
-        {
-            collider.enabled = false;
-        }
+        LetPlayerGo();
 
         foreach (Light light in _pedestrianGreenLights)
         {
@@ -36,10 +57,7 @@ public class CrossWalkController : MonoBehaviour
 
     public void OnRedLight()
     {
-        foreach (Collider collider in _playerStopers)
-        {
-            collider.enabled = true;
-        }
+        StopPlayerFromGoing();
 
         foreach (Light light in _pedestrianRedLights)
         {
@@ -49,6 +67,29 @@ public class CrossWalkController : MonoBehaviour
         foreach (Light light in _pedestrianGreenLights)
         {
             light.enabled = false;
+        }
+    }
+
+    private void LetPlayerGo()
+    {
+        foreach (Collider collider in _playerStopers)
+        {
+            collider.enabled = false;
+        }
+    }
+
+    private IEnumerator StopPlayerFromGoingAfterWait()
+    {
+        yield return new WaitForSeconds(0.7f);
+
+        StopPlayerFromGoing();
+    }
+
+    private void StopPlayerFromGoing()
+    {
+        foreach (Collider collider in _playerStopers)
+        {
+            collider.enabled = true;
         }
     }
 }
