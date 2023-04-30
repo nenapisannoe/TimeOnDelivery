@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarScript : MonoBehaviour
+public class CarScript : CarFollowingPath
 {
-    [SerializeField] private float _speed = 10.0f;
-
     private bool _shouldMove = false;
 
     public bool Stoped { get; private set; } = false;
@@ -20,22 +18,22 @@ public class CarScript : MonoBehaviour
         }
         else
         {
-            RegularMove();
+            Move();
         }
     }
 
     void MoveToCrossWalk()
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, transform.right, out hit);
+        Physics.Raycast(transform.position, transform.forward, out hit);
 
-        Vector3 movement = transform.right * _speed * Time.deltaTime;
+        Vector3 movement = GetMovement();
 
         Stoped = ShouldStop(hit, movement);
         
         if (!Stoped)
         {
-            transform.Translate(movement, Space.World);
+            Move();
         }
     }
 
@@ -43,7 +41,7 @@ public class CarScript : MonoBehaviour
     {
         if (hit.collider == null)
         {
-            return true;
+            return false;
         }
 
         var hitObjectTag = hit.collider.tag;
@@ -65,16 +63,6 @@ public class CarScript : MonoBehaviour
         }
 
         return false;
-    }
-
-    void RegularMove()
-    {
-        Stoped = false;
-        
-        // Right just because models are imported the way car's forward is red axis
-        Vector3 movement = transform.right * _speed * Time.deltaTime;
-
-        transform.Translate(movement, Space.World);
     }
 
     public void OnGreenLight()

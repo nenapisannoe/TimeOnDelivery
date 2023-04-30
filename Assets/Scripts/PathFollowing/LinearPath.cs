@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class LinearPath : Path
 {
-    [SerializeField] Vector3 _start;
-    [SerializeField] Vector3 _end;
+    [SerializeField] Transform _start;
+    [SerializeField] Transform _end;
     public override Vector3 GetPathPoint(float t)
     {
-        var difference = _end - _start;
+        var start = _start.position;
+        var end = _end.position;
+        var difference = end - start;
 
-        return (_end - _start) * t + _start;
+        return (end - start) * t + start;
+    }
+
+    private void OnDrawGizmos()
+    {
+        var start = _start.position;
+        var end = _end.position;
+        Gizmos.DrawLine(start, end);
     }
 }
