@@ -10,6 +10,7 @@ TagManager:
   - Buff
   - JumpZone
   - Bus stop
+  - Line
   layers:
   - Default
   - TransparentFX
