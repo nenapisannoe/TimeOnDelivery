@@ -41,6 +41,7 @@ public class PlayerController: MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision!");
         if (collision.collider == null)
             return;
 
