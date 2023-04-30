@@ -1832,9 +1832,9 @@ GameObject:
   - component: {fileID: 2003197131}
   - component: {fileID: 2003197130}
   - component: {fileID: 2003197129}
-  - component: {fileID: 2003197135}
   - component: {fileID: 2003197134}
   - component: {fileID: 2003197136}
+  - component: {fileID: 2003197137}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1914,7 +1914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003197128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.26, y: 1.53, z: -2.5156517}
+  m_LocalPosition: {x: -5.26, y: 1.577, z: -2.5156517}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2003197135}
+      - m_Target: {fileID: 2003197137}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -1968,21 +1968,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2003197135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003197128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d36b5abe8defa48bad582068a88539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 8
-  _rotationSpeed: 0.15
-  _characterController: {fileID: 0}
 --- !u!143 &2003197136
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2001,6 +1986,21 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2003197137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003197128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424acbc08f721ba42a46c3ec77ad7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 8
+  _rotationSpeed: 0.15
+  _gravity: -9.8
 --- !u!1001 &2081062405
 PrefabInstance:
   m_ObjectHideFlags: 0
