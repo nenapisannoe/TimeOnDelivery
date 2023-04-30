@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Car
   - CrossWalk
+  - Store
+  - Buff
+  - JumpZone
+  - Bus stop
   layers:
   - Default
   - TransparentFX
