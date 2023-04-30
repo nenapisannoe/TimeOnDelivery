@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("PlayerMovement");
+        SceneManager.LoadScene("CarsFollowingPaths");
     }
 
     public void QuitGame()
