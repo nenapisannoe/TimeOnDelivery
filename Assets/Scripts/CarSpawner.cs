@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _carPrefabs;
+    // Cars to spawn
+    [SerializeField] private GameObject _carPrefab;
+    
+    // Car pathes setup
+    [SerializeField] private Path[] _carPathes;
+    [SerializeField] private bool _isCarPathesLooped;
+
+    // Spawning configuration
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private bool _shouldSpawnPeriodically = true;
     [SerializeField] private float _spawningDelayInSeconds = 2.0f;
 
+    // Trafic controller which controls car movement and spawning by trafic light evenets
     [SerializeField] private TraficController _traficController;
 
     private bool _delayEnded = true;
@@ -60,10 +68,7 @@ public class CarSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        var index = Random.Range(0, _carPrefabs.Length);
-        var prefab = _carPrefabs[index];
-
-        GameObject carObject = Instantiate(prefab, _spawnPosition);
+        GameObject carObject = Instantiate(_carPrefab, _spawnPosition);
         CarScript carScript = carObject.GetComponent<CarScript>();
         if (carScript != null)
         {
@@ -84,5 +89,7 @@ public class CarSpawner : MonoBehaviour
 
         _traficController.CarGreenLight.AddListener(carScript.OnGreenLight);
         _traficController.CarRedLight.AddListener(carScript.OnRedLight);
+
+        carScript.SetPaths(_carPathes, _isCarPathesLooped);
     }
 }

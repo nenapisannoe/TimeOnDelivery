@@ -6,8 +6,8 @@ public class CarFollowingPath : MonoBehaviour
 {
     [SerializeField] private Path[] _paths;
 
-    [SerializeField] private float _speed = 1.0f;
-    [SerializeField] private float _rotationSpeed = 0.15f;
+    [SerializeField] protected float _speed = 0.5f;
+    [SerializeField] protected float _rotationSpeed = 0.15f;
     [SerializeField] private bool _isLooped = false;
 
     private int _currentPathIndex;
@@ -16,7 +16,32 @@ public class CarFollowingPath : MonoBehaviour
 
     private const float EPS = 0.001f;
 
+    public void SetPaths(Path[] paths, bool isLooped)
+    {
+        if (paths == null || paths.Length == 0)
+        {
+            Debug.LogError("Paths should not be empty or null");
+            return;
+        }
+
+        _currentPathIndex = 0;
+        _t = 0;
+
+        _paths = paths;
+        _isLooped = isLooped;
+    }
+
+    public float Speed {
+        get { return _speed; }
+        set 
+        { 
+            if (value > 0.0f)
+                _speed = value;
+        }
+    }
+
     // Not pure
+
     protected Vector3 NextPosition()
     {
         if (Mathf.Abs(_t - 1.0f) < EPS)
@@ -37,6 +62,11 @@ public class CarFollowingPath : MonoBehaviour
         Vector3 newPosition = path.GetPathPoint(_t);
 
         return newPosition;
+    }
+
+    protected Vector3 GetMovement()
+    {
+        return NextPosition() - transform.position;
     }
 
     // Pure
