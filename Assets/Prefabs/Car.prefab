@@ -109,4 +109,4 @@ MonoBehaviour:
   _speed: 0.2
   _rotationSpeed: 0.15
   _isLooped: 0
-  _carWidth: 1.25
+  _carWidth: 7

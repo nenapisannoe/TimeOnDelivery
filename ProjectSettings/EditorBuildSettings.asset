@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarsFollowingPaths.unity
     guid: 1b93eeee55f48fc4c931e1ad66c2185b
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 7f3e5b387f4dfcf47b8595dd40f92cac
   m_configObjects: {}
