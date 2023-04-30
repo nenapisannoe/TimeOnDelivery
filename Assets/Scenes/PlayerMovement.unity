@@ -1787,7 +1787,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 1531113325}
   _shouldSpawnPeriodically: 1
   _spawningDelayInSeconds: 1
-  _traficController: {fileID: 1345522830}
+  _closestTraficController: {fileID: 1345522830}
 --- !u!1001 &1876007644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 95819563}
   _shouldSpawnPeriodically: 1
   _spawningDelayInSeconds: 1
-  _traficController: {fileID: 1345522830}
+  _closestTraficController: {fileID: 1345522830}
 --- !u!4 &2123483144
 Transform:
   m_ObjectHideFlags: 0
