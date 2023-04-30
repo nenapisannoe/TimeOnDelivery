@@ -1305,17 +1305,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f9714689a2aa0448858f1b724d31965, type: 3}
---- !u!114 &1012255018 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1012255018, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
-  m_PrefabInstance: {fileID: 7600117447649263179}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94235ce8d60ec7a4f8a9fc2362fb51a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1039026927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1479,6 +1468,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1345522830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1517343140080326235, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
+  m_PrefabInstance: {fileID: 7600117447649263179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94235ce8d60ec7a4f8a9fc2362fb51a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1441969347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1787,7 +1787,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 1531113325}
   _shouldSpawnPeriodically: 1
   _spawningDelayInSeconds: 1
-  _traficController: {fileID: 1012255018}
+  _traficController: {fileID: 1345522830}
 --- !u!1001 &1876007644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 95819563}
   _shouldSpawnPeriodically: 1
   _spawningDelayInSeconds: 1
-  _traficController: {fileID: 1012255018}
+  _traficController: {fileID: 1345522830}
 --- !u!4 &2123483144
 Transform:
   m_ObjectHideFlags: 0
@@ -2167,6 +2167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1517343140080326235, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
+      propertyPath: _pedestrianGreen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7600117448082056275, guid: fb5a8b9139fe15947a92bdd73db5434a, type: 3}
       propertyPath: m_RootOrder
       value: 10

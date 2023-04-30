@@ -12,6 +12,14 @@ public class CrossWalkController : MonoBehaviour
 
     private void Start()
     {
+        if (_traficController.PedestrianGreen)
+        {
+            OnGreenLight();
+        }
+        else
+        {
+            OnRedLight();
+        }
         _traficController.PedestrianRedLight.AddListener(OnRedLight);
         _traficController.PedestrianGreenLight.AddListener(OnGreenLight);
     }

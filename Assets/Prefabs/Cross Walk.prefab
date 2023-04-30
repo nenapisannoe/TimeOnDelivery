@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1012255016
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1012255017}
-  - component: {fileID: 1012255018}
-  m_Layer: 0
-  m_Name: TraficController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1012255017
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012255016}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.68464893, y: -3.1339736, z: 0.19950357}
-  m_LocalScale: {x: 0.125, y: 0.33333334, z: 0.125}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7600117448082056275}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1012255018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012255016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94235ce8d60ec7a4f8a9fc2362fb51a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pedestrianGreen: 0
-  _greenLightSeconds: 5
-  _redLightSeconds: 5
 --- !u!1 &7600117447969777300
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +110,7 @@ GameObject:
   - component: {fileID: 7600117448082056285}
   - component: {fileID: 7600117448082056286}
   - component: {fileID: 7600117448082056274}
+  - component: {fileID: 1517343140080326235}
   m_Layer: 0
   m_Name: Cross Walk
   m_TagString: CrossWalk
@@ -180,7 +134,6 @@ Transform:
   - {fileID: 7600117447969777320}
   - {fileID: 2475035462401136223}
   - {fileID: 2475035463187391068}
-  - {fileID: 1012255017}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -259,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adf82d35d5884a4984087a2860ef766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _traficController: {fileID: 1012255018}
+  _traficController: {fileID: 1517343140080326235}
   _playerStopers:
   - {fileID: 7600117448325182796}
   - {fileID: 7600117447969777323}
@@ -273,6 +226,21 @@ MonoBehaviour:
   - {fileID: 6751757394701500904}
   - {fileID: 6275571078577668295}
   - {fileID: 6751757395558512107}
+--- !u!114 &1517343140080326235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600117448082056287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94235ce8d60ec7a4f8a9fc2362fb51a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pedestrianGreen: 0
+  _greenLightSeconds: 5
+  _redLightSeconds: 5
 --- !u!1 &7600117448325182797
 GameObject:
   m_ObjectHideFlags: 0

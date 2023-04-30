@@ -43,6 +43,13 @@ public class CarSpawner : MonoBehaviour
 
     void Start()
     {
+        if (_traficController.CarGreen)
+        {
+            StartSpawning();
+        } else
+        {
+            StopSpawning();
+        }
         _traficController.CarRedLight.AddListener(StopSpawning);
         _traficController.CarGreenLight.AddListener(StartSpawning);
     }
@@ -78,17 +85,8 @@ public class CarSpawner : MonoBehaviour
 
     private void ConfigureCar(CarScript carScript)
     {
-        if (_traficController.CarGreen)
-        {
-            carScript.OnGreenLight();
-        }
-        else
-        {
-            carScript.OnRedLight();
-        }
-
-        _traficController.CarGreenLight.AddListener(carScript.OnGreenLight);
-        _traficController.CarRedLight.AddListener(carScript.OnRedLight);
+        //_traficController.CarGreenLight.AddListener(carScript.OnGreenLight);
+        //_traficController.CarRedLight.AddListener(carScript.OnRedLight);
 
         carScript.SetPaths(_carPathes, _isCarPathesLooped);
     }
