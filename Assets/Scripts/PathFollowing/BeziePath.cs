@@ -6,20 +6,31 @@ public class BeziePath : Path
 {
     [SerializeField] Transform[] _beziePoints;
 
+    private Vector3 _p0;
+    private Vector3 _p1;
+    private Vector3 _p2;
+    private Vector3 _p3;
+
+    private void Start()
+    {
+        _p0 = _beziePoints[0].position + transform.position;
+        _p1 = _beziePoints[1].position + transform.position;
+        _p2 = _beziePoints[2].position + transform.position;
+        _p3 = _beziePoints[3].position + transform.position;
+    }
+
     public override Vector3 GetPathPoint(float t)
     {
-        // For better readability
-        var p0 = _beziePoints[0].position;
-        var p1 = _beziePoints[1].position;
-        var p2 = _beziePoints[2].position;
-        var p3 = _beziePoints[3].position;
-
         // Formula from Wikipedia
-        return Mathf.Pow((1 - t), 3)*p0 + 3*t*Mathf.Pow((1-t), 2)*p1 + 3*t*t*(1-t)*p2 + Mathf.Pow(t, 3)*p3;
+        return Mathf.Pow((1 - t), 3)*_p0 + 3*t*Mathf.Pow((1-t), 2)*_p1 + 3*t*t*(1-t)*_p2 + Mathf.Pow(t, 3)*_p3;
     }
 
     private void OnDrawGizmos()
     {
+        _p0 = _beziePoints[0].position + transform.position;
+        _p1 = _beziePoints[1].position + transform.position;
+        _p2 = _beziePoints[2].position + transform.position;
+        _p3 = _beziePoints[3].position + transform.position;
         for (float t = 0; t <= 1; t += 0.05f)
         {
             var position = GetPathPoint(t);
@@ -28,7 +39,7 @@ public class BeziePath : Path
 
         Gizmos.DrawSphere(GetPathPoint(1.0f), 0.5f);
 
-        Gizmos.DrawLine(_beziePoints[0].position, _beziePoints[1].position);
-        Gizmos.DrawLine(_beziePoints[2].position, _beziePoints[3].position);
+        Gizmos.DrawLine(_p0, _p1);
+        Gizmos.DrawLine(_p2, _p3);
     }
 }

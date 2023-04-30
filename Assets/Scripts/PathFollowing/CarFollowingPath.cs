@@ -33,6 +33,7 @@ public class CarFollowingPath : MonoBehaviour
         if (_currentPathIndex >= _paths.Length)
         {
             if (!_isLooped) return;
+
             _currentPathIndex = 0;
         }
 
