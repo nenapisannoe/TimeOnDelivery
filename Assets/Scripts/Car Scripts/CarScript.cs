@@ -62,7 +62,7 @@ public class CarScript : CarFollowingPath
             return nextCar.Stoped && (hit.distance < movement.magnitude + nextCar.CarWidth);
         }
 
-        if (hitObjectTag == "Bus" || hitObjectTag == "BusGhost")
+        if (hitObjectTag == "Bus" || hitObjectTag == "BusGhost" || hitObjectTag == "Player")
         {
             return hit.distance < movement.magnitude + 10f;
         }
