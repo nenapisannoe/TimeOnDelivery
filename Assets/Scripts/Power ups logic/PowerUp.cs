@@ -7,10 +7,9 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private GameObject player;
     [SerializeField] private string buff = "Boots";
     
-    public void PickUpBuff()
+    public void PickUpBuff(GameObject player)
     {
         var co = player.GetComponent(buff);
         Behaviour be = co as Behaviour;
@@ -29,7 +28,7 @@ public class PowerUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PickUpBuff();
+            PickUpBuff(other.gameObject);
             Destroy(gameObject);
         }
     }

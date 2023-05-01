@@ -16,6 +16,7 @@ public class Boots : MonoBehaviour
     [SerializeField] private float _jumpSpeed = 4f;
     [SerializeField] private float _jumpHeight = 2f;
 
+    [SerializeField] private Transform _lidarPoint;
     [SerializeField] private float _maximumDistanceToCrossWalk = 5f;
 
     private PlayerController _playerController;
@@ -46,13 +47,14 @@ public class Boots : MonoBehaviour
     private bool CanJump()
     {
         RaycastHit hit;
-        if (!Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+        if (!Physics.Raycast(_lidarPoint.position, transform.TransformDirection(Vector3.forward), out hit))
         {
             return false;
         }
 
         if (hit.transform.tag != "CrossWalk")
         {
+            Debug.Log(hit.transform.tag);
             return false;
         }
 
