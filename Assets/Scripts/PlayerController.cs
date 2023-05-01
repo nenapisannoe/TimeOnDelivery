@@ -11,13 +11,14 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private float _rotationSpeed = 0.15f;
 
     [SerializeField] private float slowering = 2.0f;
-    private bool slowed = false;
+    public bool slowed = false;
 
     [SerializeField] private float _gravity = -9.8f;
     
     private CharacterController _characterController;
 
     private Vector2 _move;
+    
 
     public void OnMove(InputAction.CallbackContext context)
     {

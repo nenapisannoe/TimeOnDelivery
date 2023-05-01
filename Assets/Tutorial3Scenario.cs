@@ -10,6 +10,7 @@ public class Tutorial3Scenario : MonoBehaviour
     [SerializeField] private Text TutorialText;
     [SerializeField] private bool step2done;
     [SerializeField] private bool step3done;
+    [SerializeField] private bool step4done;
     void Start()
     {
         _player = FindObjectOfType<DeliveryManager>();
@@ -25,19 +26,30 @@ public class Tutorial3Scenario : MonoBehaviour
             step2done = true;
         }
 
-        if (!step3done && _player.deliveredInTutorial)
+        if (step2done && _player.gameObject.GetComponent<PlayerController>().slowed)
         {
             StepThree();
             step3done = true;
         }
 
+        if (step3done && _player.deliveredInTutorial)
+        {
+            StepFour();
+            step4done = true;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (step2done && step3done)
+            if (step4done)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
+    }
+
+    private void StepFour()
+    {
+        TutorialText.text = "Excellent! The package has been delivered! Time for your next task. Press space when you are ready.";
     }
 
     private void StepTwo()
@@ -46,6 +58,7 @@ public class Tutorial3Scenario : MonoBehaviour
     }
     private void StepThree()
     {
-        TutorialText.text = "Excellent! The package has been delivered! Time for your next task. Press space when you are ready.";
+        TutorialText.text =
+            "Sometimes objects on the road may slow you down. Next time, try and find a way to avoid them.";
     }
 }
