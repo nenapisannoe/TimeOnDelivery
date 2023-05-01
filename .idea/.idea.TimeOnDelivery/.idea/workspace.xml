@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6db454ae-4924-40b8-9e0e-6df5f4bd36b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_for_menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_for_menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/Authors.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/Authors.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

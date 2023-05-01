@@ -37,9 +37,27 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level 2");
     }
+    
+    public void Creators()
+    {
+        SceneManager.LoadScene("Authors");
+    }
+    
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(GameConfig.instance.currentLevel + 1);
+        if (GameConfig.instance.currentLevel == GameConfig.instance.statistics.Count)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(GameConfig.instance.currentLevel + 1);
+        }
+        
     }
     
     public void ReloadLevel()
