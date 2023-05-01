@@ -48,8 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carModelPrefabs:
-  - {fileID: 45209207089344872, guid: a15133d8898d400449f7c21aef33e511, type: 3}
-  - {fileID: 6454127380093350245, guid: 7a3e76d3ba476dc43adbe00faa26df0d, type: 3}
+  - {fileID: 3705159004137547615, guid: d27cca3177cb81344bb5308f58eb88b0, type: 3}
 --- !u!65 &3318941757636755704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paths:
   - {fileID: 0}
-  _speed: 0.05
+  _speed: 0.1
   _rotationSpeed: 0.15
   _isLooped: 0
   _carWidth: 30
