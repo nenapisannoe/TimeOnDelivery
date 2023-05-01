@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1758537529986459850}
+  - component: {fileID: 3859095366745494388}
   m_Layer: 0
   m_Name: Fance
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4068797033951974689}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -26.06652, y: 2.1499996, z: 72.19998}
+  m_LocalPosition: {x: -25.63, y: 2.1499996, z: 66.71}
   m_LocalScale: {x: 0.3, y: 3, z: 9}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3859095366745494388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068797033951974689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.337721, y: 1, z: 0.7393138}
+  m_Center: {x: -23.32308, y: 0, z: -3.6001275}
 --- !u!1 &9067698742887991984
 GameObject:
   m_ObjectHideFlags: 0
