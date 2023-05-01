@@ -20,7 +20,7 @@ public class PlayerController: MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (gameObject.activeInHierarchy)
+        if (gameObject.activeInHierarchy && isActiveAndEnabled)
         {
             _move = context.ReadValue<Vector2>();
         } else

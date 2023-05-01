@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BusController : CarFollowingPath
 {
-    [SerializeField] private bool _stoped = false;
     [SerializeField] private float _stopSeconds = 3.0f;
+
+    private bool _stoped = false;
 
     private Collider _collider;
     private GameObject _player;
@@ -14,7 +15,8 @@ public class BusController : CarFollowingPath
     {
         if (other.tag == "Bus stop")
         {
-            StartCoroutine(WaitOnBusStop());
+            BusStop busStop = other.gameObject.GetComponentInParent<BusStop>();
+            StartCoroutine(WaitOnBusStop(busStop));
             return;
         }
 
@@ -29,11 +31,6 @@ public class BusController : CarFollowingPath
     {
         _collider = GetComponent<Collider>();
         _player = null;
-
-        if (_stoped)
-        {
-            StartCoroutine(WaitOnBusStop());
-        }
     }
 
     private void Update()
@@ -44,15 +41,14 @@ public class BusController : CarFollowingPath
         }
     }
 
-    private IEnumerator WaitOnBusStop()
+    private IEnumerator WaitOnBusStop(BusStop busStop)
     {
         _stoped = true;
         _collider.isTrigger = true;
 
         if (_player != null)
         {
-            _player.transform.position = transform.position + transform.right * 2;
-            _player.SetActive(true);
+            busStop.SpawnPlayer(_player);
             _player = null;
         }
 
