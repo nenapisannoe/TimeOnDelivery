@@ -45,6 +45,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 4.7491503, z: 6.894718}
   m_Center: {x: 1.3462786e-14, y: -0.9859085, z: 2.9473588}
+--- !u!1 &2068146193156759834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3789756045677974072}
+  m_Layer: 0
+  m_Name: Player spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3789756045677974072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068146193156759834}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.95, y: 0, z: 2.28}
+  m_LocalScale: {x: 1.2983805, y: 1.298381, z: 1.2983805}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1231648414415111843}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8365007308906810053
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1231648414415111843}
+  - component: {fileID: 6566414751781719773}
   m_Layer: 0
   m_Name: Bus stop
   m_TagString: Untagged
@@ -175,6 +207,20 @@ Transform:
   m_Children:
   - {fileID: 5357407466689512834}
   - {fileID: 3422919026588932530}
+  - {fileID: 3789756045677974072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &6566414751781719773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489998833334212306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128bb6ab3d46c614c9f10ddc8b70dab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerSpawnPoint: {fileID: 3789756045677974072}

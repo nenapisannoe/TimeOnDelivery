@@ -6982,7 +6982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcf26bd5162da84381cc05137719e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 20
+  timeLeft: 60
   timerText: {fileID: 729440894}
 --- !u!114 &729440894 stripped
 MonoBehaviour:
@@ -20817,6 +20817,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3789756045677974072, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8489998833334212306, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
       propertyPath: m_Name
       value: Bus stop
@@ -20884,7 +20888,7 @@ PrefabInstance:
       value: PlayerBot
       objectReference: {fileID: 0}
     - target: {fileID: 5873058942975252848, guid: a088f09c5adcea04f987b084a3d6b965, type: 3}
-      propertyPath: bootsIcon
+      propertyPath: _bootsIcon
       value: 
       objectReference: {fileID: 1298149203}
     m_RemovedComponents: []
