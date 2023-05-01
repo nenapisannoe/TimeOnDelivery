@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177866491995328399, guid: b8333fabc035c1c4391590ce29fa7a69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5177866491995328399, guid: b8333fabc035c1c4391590ce29fa7a69, type: 3}
       propertyPath: m_LocalPosition.z
@@ -215,6 +215,7 @@ MonoBehaviour:
   step2done: 0
   step3done: 0
   step4done: 0
+  step5done: 0
 --- !u!4 &341510716
 Transform:
   m_ObjectHideFlags: 0
