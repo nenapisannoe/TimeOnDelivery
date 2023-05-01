@@ -2,34 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BusController : CarFollowingPath
+public class BusController: CarFollowingPath
 {
     [SerializeField] private float _stopSeconds = 3.0f;
 
     private bool _stoped = false;
 
-    private Collider _collider;
+    [SerializeField] private Collider _collider;
     private GameObject _player;
-
-    private void OnTriggerEnter(Collider other)
+    
+    public void StopOnBusStop(BusStop busStop)
     {
-        if (other.tag == "Bus stop")
-        {
-            BusStop busStop = other.gameObject.GetComponentInParent<BusStop>();
-            StartCoroutine(WaitOnBusStop(busStop));
-            return;
-        }
+        StartCoroutine(WaitOnBusStop(busStop));
+    }
 
-        if (other.tag == "Player")
-        {
-            _player = other.gameObject;
-            _player.SetActive(false);
-        }
+    public void LoadPassanger(GameObject passanger)
+    {
+        _player = passanger;
+        _player.SetActive(false);
     }
 
     private void Start()
     {
-        _collider = GetComponent<Collider>();
         _player = null;
     }
 

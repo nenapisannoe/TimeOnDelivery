@@ -13,6 +13,7 @@ TagManager:
   - Line
   - Fence
   - Bus
+  - BusGhost
   layers:
   - Default
   - TransparentFX
