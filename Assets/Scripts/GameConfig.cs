@@ -30,7 +30,7 @@ public class GameConfig : MonoBehaviour
     public int currentLevel = 0;
     private void Awake()
     {
-        for (int i = 0; i < SceneManager.sceneCountInBuildSettings - 3; i++)
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings - 6; i++)
         {
             statistics.Add(0);
         }

@@ -17,6 +17,12 @@ public class RateLevel : MonoBehaviour
         {
             DrawTransparentStar(star2);
             DrawTransparentStar(star3);
+            DrawTransparentStar(star1);
+        }
+        else if (res <= stat.oneStar && res >= stat.twoStars)
+        {
+            DrawTransparentStar(star2);
+            DrawTransparentStar(star3);
             DrawFullStar(star1);
         }
         else if (res <= stat.twoStars && res >= stat.threeStars)
