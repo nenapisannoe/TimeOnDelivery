@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6db454ae-4924-40b8-9e0e-6df5f4bd36b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial1Scenario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial1Scenario.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial2Scenario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial2Scenario.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tutorial3Scenario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tutorial3Scenario.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameConfig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameConfig.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameConfig.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

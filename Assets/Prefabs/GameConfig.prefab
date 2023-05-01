@@ -45,5 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistics: []
-  results: []
+  results:
+  - oneStar: 23
+    twoStars: 22
+    threeStars: 21
   currentLevel: 0
