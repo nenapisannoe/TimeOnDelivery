@@ -28936,34 +28936,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7268237111109043944, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
-      propertyPath: results.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7268237111109043944, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
-      propertyPath: results.Array.data[0].oneStar
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7268237111109043944, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
-      propertyPath: results.Array.data[1].oneStar
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 7268237111109043944, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
-      propertyPath: results.Array.data[0].twoStars
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 7268237111109043944, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
-      propertyPath: results.Array.data[1].twoStars
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 7268237111109043944, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
-      propertyPath: results.Array.data[0].threeStars
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 7268237111109043944, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
-      propertyPath: results.Array.data[1].threeStars
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 7268237111109043945, guid: d9e5461453de2d44783fd9876667c0d4, type: 3}
       propertyPath: m_RootOrder
       value: 26
