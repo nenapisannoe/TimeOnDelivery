@@ -52,6 +52,14 @@ public class Boots : MonoBehaviour
             MakeIconGrey();
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (!this.enabled || !other.CompareTag("JumpZone")) return;
+
+        MakeIconGrey();
+        _canJump = false;
+    }
+
     private bool CanJump()
     {
         if (_directionToRoad.magnitude == 0)
@@ -91,14 +99,6 @@ public class Boots : MonoBehaviour
         var tempColor = _bootsIcon.color;
         tempColor.a = 0.5f;
         _bootsIcon.color = tempColor;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!this.enabled || other.CompareTag("JumpZone")) return;
-
-        MakeIconGrey();
-        _canJump = false;
     }
 
     private void Update()
