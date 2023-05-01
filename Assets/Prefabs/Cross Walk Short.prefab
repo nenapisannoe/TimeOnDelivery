@@ -219,14 +219,14 @@ MonoBehaviour:
   - {fileID: 3488211414950212747}
   - {fileID: 3488211414760744812}
   _pedestrianGreenLights:
-  - {fileID: 0}
+  - {fileID: 8760450391908713691}
   - {fileID: 5363401032586549041}
-  - {fileID: 0}
+  - {fileID: 8760450391084888280}
   - {fileID: 5363401032806540082}
   _pedestrianRedLights:
-  - {fileID: 0}
+  - {fileID: 1010734739956528387}
   - {fileID: 333997365792243759}
-  - {fileID: 0}
+  - {fileID: 1010734740244529408}
   - {fileID: 333997365471736876}
 --- !u!114 &5485165312836327324
 MonoBehaviour:
@@ -747,9 +747,19 @@ Light:
   m_CorrespondingSourceObject: {fileID: 3803858441323559099, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
   m_PrefabInstance: {fileID: 3488211414490664087}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &1010734740244529408 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4498608020477037975, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
+  m_PrefabInstance: {fileID: 3488211414490664087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &5363401032806540082 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8792782523463135141, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
+  m_PrefabInstance: {fileID: 3488211414490664087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &8760450391084888280 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5331068969751559247, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
   m_PrefabInstance: {fileID: 3488211414490664087}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8883491974531589019 stripped
@@ -839,9 +849,19 @@ Light:
   m_CorrespondingSourceObject: {fileID: 3803858441323559099, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
   m_PrefabInstance: {fileID: 3488211414739368084}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &1010734739956528387 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4498608020477037975, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
+  m_PrefabInstance: {fileID: 3488211414739368084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &5363401032586549041 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8792782523463135141, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
+  m_PrefabInstance: {fileID: 3488211414739368084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &8760450391908713691 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5331068969751559247, guid: 47ca164ec203e624f90b85d3a630cb0a, type: 3}
   m_PrefabInstance: {fileID: 3488211414739368084}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8883491974780311448 stripped
