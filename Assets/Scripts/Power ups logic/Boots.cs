@@ -8,7 +8,10 @@ using UnityEngine.UI;
 public class Boots : MonoBehaviour
 {
     [SerializeField] private Image _bootsIcon;
-    [SerializeField] private GameObject _jumpParticleSystem;
+
+    // For fly animation
+    [SerializeField] private GameObject _wheels;
+    [SerializeField] private GameObject _turbines;
 
     [SerializeField] bool _canJump = false;
 
@@ -20,7 +23,8 @@ public class Boots : MonoBehaviour
     [SerializeField] private float _maximumDistanceToCrossWalk = 5f;
 
     private PlayerController _playerController;
-    
+    private GameObject _particleSystem;
+
     private Vector3 _directionToRoad = Vector3.zero;
 
     private const float EPS = 0.2f;
@@ -117,31 +121,34 @@ public class Boots : MonoBehaviour
 
     private IEnumerator JumpCoroutine(Vector3 jumpDestination)
     {
-        _playerController.enabled = false;
-
-        transform.Translate(new Vector3(0, _jumpHeight, 0));
+        PrepareForFly();
         jumpDestination = jumpDestination + new Vector3(0, _jumpHeight, 0);
-
-        var particleSystem = Instantiate(_jumpParticleSystem, transform);
 
         while (Vector3.Distance(transform.position, jumpDestination) > EPS)
         {
-            Debug.Log(Vector3.Distance(transform.position, jumpDestination));
-
             Vector3 movement = _jumpSpeed * Time.deltaTime * _directionToRoad;
 
             transform.Translate(movement, Space.World);
-            //particleSystem.transform.Translate(movement, Space.World);
 
             yield return null;
         }
 
-        Destroy(particleSystem);
-        
+        StopFlying();
+    }
+
+    private void PrepareForFly()
+    {
+        _playerController.enabled = false;
+        transform.Translate(new Vector3(0, _jumpHeight, 0));
+        _wheels.SetActive(false);
+        _turbines.SetActive(true);
+    }
+
+    private void StopFlying()
+    {
         transform.Translate(new Vector3(0, -_jumpHeight, 0));
-
+        _wheels.SetActive(true);
+        _turbines.SetActive(false);
         _playerController.enabled = true;
-
-        Debug.Log("Stop moving");
     }
 }
