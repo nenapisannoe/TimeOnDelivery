@@ -44,7 +44,7 @@ public class CarFollowingPath : MonoBehaviour
 
     protected Vector3 NextPosition()
     {
-        if (Mathf.Abs(_t - 1.0f) < EPS)
+        if (Mathf.Abs(_t - 1.0f) < EPS || _t > 1.0f)
         {
             _currentPathIndex++;
             _t = 0.0f;
