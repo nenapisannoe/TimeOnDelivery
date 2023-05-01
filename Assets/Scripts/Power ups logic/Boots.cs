@@ -20,8 +20,10 @@ public class Boots : MonoBehaviour
     [SerializeField] private float _maximumDistanceToCrossWalk = 5f;
 
     private PlayerController _playerController;
+    
+    private Vector3 _directionToRoad = Vector3.zero;
 
-    private const float EPS = 0.1f;
+    private const float EPS = 0.2f;
 
     private void Start()
     {
@@ -37,6 +39,8 @@ public class Boots : MonoBehaviour
             MakeIconGrey();
             return;
         }
+
+        _directionToRoad = other.transform.right;
         _canJump = CanJump();
         if (_canJump)
             MakeIconWhite();
@@ -46,8 +50,13 @@ public class Boots : MonoBehaviour
 
     private bool CanJump()
     {
+        if (_directionToRoad.magnitude == 0)
+        {
+            return false;
+        }
+
         RaycastHit hit;
-        if (!Physics.Raycast(_lidarPoint.position, transform.TransformDirection(Vector3.forward), out hit))
+        if (!Physics.Raycast(_lidarPoint.position, _directionToRoad, out hit))
         {
             return false;
         }
@@ -99,7 +108,7 @@ public class Boots : MonoBehaviour
 
     private void PlayerJump()
     {
-        Vector3 destination = transform.position + transform.forward * _jump;
+        Vector3 destination = transform.position + _directionToRoad * _jump;
         StartCoroutine(JumpCoroutine(destination));
         _canJump = false;
         _bootsIcon.gameObject.SetActive(false);
@@ -119,7 +128,7 @@ public class Boots : MonoBehaviour
         {
             Debug.Log(Vector3.Distance(transform.position, jumpDestination));
 
-            Vector3 movement = _jumpSpeed * Time.deltaTime * transform.forward;
+            Vector3 movement = _jumpSpeed * Time.deltaTime * _directionToRoad;
 
             transform.Translate(movement, Space.World);
             //particleSystem.transform.Translate(movement, Space.World);
