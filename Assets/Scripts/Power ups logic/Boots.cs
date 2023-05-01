@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Boots : MonoBehaviour
 {
     [SerializeField] private Image _bootsIcon;
+    [SerializeField] private GameObject _jumpParticleSystem;
 
     [SerializeField] bool _canJump = false;
 
@@ -110,6 +111,8 @@ public class Boots : MonoBehaviour
         transform.Translate(new Vector3(0, _jumpHeight, 0));
         jumpDestination = jumpDestination + new Vector3(0, _jumpHeight, 0);
 
+        var particleSystem = Instantiate(_jumpParticleSystem, transform);
+
         while (Vector3.Distance(transform.position, jumpDestination) > EPS)
         {
             Debug.Log(Vector3.Distance(transform.position, jumpDestination));
@@ -117,10 +120,13 @@ public class Boots : MonoBehaviour
             Vector3 movement = _jumpSpeed * Time.deltaTime * transform.forward;
 
             transform.Translate(movement, Space.World);
+            //particleSystem.transform.Translate(movement, Space.World);
 
             yield return null;
         }
 
+        Destroy(particleSystem);
+        
         transform.Translate(new Vector3(0, -_jumpHeight, 0));
 
         _playerController.enabled = true;
