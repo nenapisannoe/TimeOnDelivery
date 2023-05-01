@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject player;
-    private string buff = "Boots";
+    [SerializeField] private string buff = "Boots";
     
     public void PickUpBuff()
     {
