@@ -8,6 +8,7 @@ public class DeliveryManager : MonoBehaviour
 {
     [SerializeField] private GameObject bag;
     [SerializeField] public bool cargoPicked;
+    [SerializeField] public bool deliveredInTutorial;
     private Timer _timer;
     private float _score;
 
@@ -32,6 +33,14 @@ public class DeliveryManager : MonoBehaviour
             {
                 _timer.StopTimer();
                 OnLevelEnded();
+            }
+        }
+        
+        if (other.CompareTag("TutorialFinish"))
+        {
+            if (cargoPicked)
+            {
+                deliveredInTutorial = true;
             }
         }
     }
