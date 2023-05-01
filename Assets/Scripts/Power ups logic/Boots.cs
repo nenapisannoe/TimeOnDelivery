@@ -12,7 +12,7 @@ public class Boots : MonoBehaviour
 
     [SerializeField] bool _canJump = false;
 
-    [SerializeField] private float _jump = 12f;
+    [SerializeField] private float _jump = 14f;
     [SerializeField] private float _jumpSpeed = 4f;
     [SerializeField] private float _jumpHeight = 2f;
 
@@ -61,7 +61,7 @@ public class Boots : MonoBehaviour
             return false;
         }
 
-        if (hit.transform.tag != "CrossWalk")
+        if (!hit.transform.CompareTag("CrossWalk") && !hit.transform.CompareTag("Fence"))
         {
             Debug.Log(hit.transform.tag);
             return false;
