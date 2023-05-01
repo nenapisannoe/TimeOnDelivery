@@ -49,10 +49,4 @@ public class Tutorial1Scenario : MonoBehaviour
     {
         TutorialText.text = "Excellent! The package has been delivered! Time for your next task. Press space when you are ready.";
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
