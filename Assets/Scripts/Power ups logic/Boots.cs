@@ -10,7 +10,7 @@ public class Boots : MonoBehaviour
     [SerializeField] private Image _bootsIcon;
     [SerializeField] private GameObject _jumpParticleSystem;
 
-    [SerializeField] bool _canJump = false;
+    [SerializeField] public bool _canJump = false;
 
     [SerializeField] private float _jump = 12f;
     [SerializeField] private float _jumpSpeed = 4f;
