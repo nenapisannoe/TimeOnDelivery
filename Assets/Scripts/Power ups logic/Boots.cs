@@ -7,14 +7,24 @@ using UnityEngine.UI;
 
 public class Boots : MonoBehaviour
 {
-    [SerializeField] private Image bootsIcon;
+    [SerializeField] private Image _bootsIcon;
+
     [SerializeField] bool _canJump = false;
-    [SerializeField] private float jump = 12f;
+
+    [SerializeField] private float _jump = 12f;
+    [SerializeField] private float _jumpSpeed = 4f;
+    [SerializeField] private float _jumpHeight = 2f;
+
     [SerializeField] private float _maximumDistanceToCrossWalk = 5f;
+
+    private PlayerController _playerController;
+
+    private const float EPS = 0.1f;
 
     private void Start()
     {
-        bootsIcon.gameObject.SetActive(true);
+        _playerController = GetComponent<PlayerController>();
+        _bootsIcon.gameObject.SetActive(true);
         MakeIconGrey();
     }
 
@@ -55,16 +65,16 @@ public class Boots : MonoBehaviour
 
     private void MakeIconWhite()
     {
-        var tempColor = bootsIcon.color;
+        var tempColor = _bootsIcon.color;
         tempColor.a = 1f;
-        bootsIcon.color = tempColor;
+        _bootsIcon.color = tempColor;
     }
 
     private void MakeIconGrey()
     {
-        var tempColor = bootsIcon.color;
+        var tempColor = _bootsIcon.color;
         tempColor.a = 0.5f;
-        bootsIcon.color = tempColor;
+        _bootsIcon.color = tempColor;
     }
 
     private void OnTriggerExit(Collider other)
@@ -79,15 +89,42 @@ public class Boots : MonoBehaviour
     {
         if (_canJump && Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("Jump!");
             PlayerJump();
         }
     }
 
     private void PlayerJump()
     {
-        transform.Translate(transform.forward * jump, Space.World);
+        Vector3 destination = transform.position + transform.forward * _jump;
+        StartCoroutine(JumpCoroutine(destination));
         _canJump = false;
-        bootsIcon.gameObject.SetActive(false);
+        _bootsIcon.gameObject.SetActive(false);
         this.enabled = false;
+    }
+
+    private IEnumerator JumpCoroutine(Vector3 jumpDestination)
+    {
+        _playerController.enabled = false;
+
+        transform.Translate(new Vector3(0, _jumpHeight, 0));
+        jumpDestination = jumpDestination + new Vector3(0, _jumpHeight, 0);
+
+        while (Vector3.Distance(transform.position, jumpDestination) > EPS)
+        {
+            Debug.Log(Vector3.Distance(transform.position, jumpDestination));
+
+            Vector3 movement = _jumpSpeed * Time.deltaTime * transform.forward;
+
+            transform.Translate(movement, Space.World);
+
+            yield return null;
+        }
+
+        transform.Translate(new Vector3(0, -_jumpHeight, 0));
+
+        _playerController.enabled = true;
+
+        Debug.Log("Stop moving");
     }
 }
