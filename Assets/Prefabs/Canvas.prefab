@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 692587688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.733389, y: 1.875, z: 1}
+  m_LocalScale: {x: 18.733389, y: 3.255026, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4307133811163023636}
@@ -817,6 +817,7 @@ GameObject:
   - component: {fileID: 5244603068352391801}
   - component: {fileID: 5244603068352391750}
   - component: {fileID: 729440893}
+  - component: {fileID: 3320379414571788973}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -841,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -851.9, y: 434.7}
+  m_AnchoredPosition: {x: 58.1, y: 434.7}
   m_SizeDelta: {x: 99.663086, y: 41.85193}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5244603068352391801
@@ -900,6 +901,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTime: 0
   timerText: {fileID: 5244603068352391750}
+--- !u!114 &3320379414571788973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244603068352391748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dcf26bd5162da84381cc05137719e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  timerText: {fileID: 5244603068352391750}
 --- !u!1 &5244603069309562012
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 856, y: 414.1}
+  m_AnchoredPosition: {x: -54, y: 414.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5244603069309562001
@@ -1259,7 +1274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &457037060201811736
 RectTransform:
   m_ObjectHideFlags: 0
