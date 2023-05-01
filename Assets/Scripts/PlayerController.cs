@@ -18,6 +18,8 @@ public class PlayerController: MonoBehaviour
 
     private Vector2 _move;
 
+    public bool ShouldSlowDownOnPuddle { get; set; } = true;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (gameObject.activeInHierarchy && isActiveAndEnabled)
@@ -34,12 +36,12 @@ public class PlayerController: MonoBehaviour
         _characterController = GetComponent<CharacterController>();
     }
 
-    void Update()
+    private void Update()
     {
         MovePlayer();
     }
 
-    void MovePlayer()
+    private void MovePlayer()
     {
         Vector3 movement = new Vector3(_move.x, 0.0f, _move.y);
 
@@ -50,8 +52,18 @@ public class PlayerController: MonoBehaviour
 
         movement.y = _gravity;
 
-        _characterController.Move(movement * _speed * Time.deltaTime);
+        _characterController.Move(movement * Speed() * Time.deltaTime);
         // transform.Translate(movement * _speed * Time.deltaTime, Space.World);
+    }
+
+    private float Speed()
+    {
+        if (slowed && ShouldSlowDownOnPuddle)
+        {
+            return _speed / slowering;
+        }
+
+        return _speed;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -69,13 +81,9 @@ public class PlayerController: MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Line")
+        if (other.tag == "Line" && ShouldSlowDownOnPuddle)
         {
-            if (!slowed)
-            {
-                _speed = _speed / slowering;
-                slowed = true;
-            }
+            slowed = true;
         }
     }
 
@@ -83,7 +91,6 @@ public class PlayerController: MonoBehaviour
     {
         if (other.tag == "Line")
         {
-            _speed = 8.0f;
             slowed = false;
         }
     }
