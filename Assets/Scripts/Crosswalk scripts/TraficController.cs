@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class TraficController : MonoBehaviour
 {
@@ -16,13 +17,48 @@ public class TraficController : MonoBehaviour
     [SerializeField] private float _greenLightSeconds = 10;
     [SerializeField] private float _redLightSeconds = 10;
 
+    [SerializeField] private TextMeshProUGUI _timerText;
+
+    private float _timeLeft;
+
     public bool PedestrianGreen { get { return _pedestrianGreen; } }
 
     public bool CarGreen { get { return !_pedestrianGreen; } }
 
     void Start()
     {
+        _timeLeft = GetCurrentLightLatency();
+        UpdateTimerTextColor();
         StartCoroutine(SwitchLightPeriodically());
+    }
+
+    private void Update()
+    {
+        _timeLeft -= Time.deltaTime;
+        DisplayTime();
+    }
+
+    private void DisplayTime()
+    {
+        _timerText.text = _timeLeft.ToString("0");
+    }
+
+    private void UpdateTimerTextColor()
+    {
+        if (_pedestrianGreen)
+            SetTimerTextGreen();
+        else
+            SetTimerTextRed();
+    }
+
+    private void SetTimerTextGreen()
+    {
+        _timerText.color = Color.green;
+    }
+
+    private void SetTimerTextRed()
+    {
+        _timerText.color = Color.red;
     }
 
     private IEnumerator SwitchLightPeriodically()
@@ -39,6 +75,9 @@ public class TraficController : MonoBehaviour
 
     private void SwitchLight()
     {
+        _timeLeft = GetCurrentLightLatency();
+        UpdateTimerTextColor();
+
         if (_pedestrianGreen)
         {
             CarRedLight.Invoke();

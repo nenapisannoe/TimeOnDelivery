@@ -12,6 +12,8 @@ TagManager:
   - Bus stop
   - Line
   - TutorialFinish
+  - Fence
+  - Bus
   layers:
   - Default
   - TransparentFX

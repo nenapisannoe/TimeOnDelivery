@@ -8,19 +8,26 @@ using UnityEngine.UI;
 public class Boots : MonoBehaviour
 {
     [SerializeField] private Image _bootsIcon;
-    [SerializeField] private GameObject _jumpParticleSystem;
+
+    // For fly animation
+    [SerializeField] private GameObject _wheels;
+    [SerializeField] private GameObject _turbines;
 
     [SerializeField] public bool _canJump = false;
 
-    [SerializeField] private float _jump = 12f;
+    [SerializeField] private float _jump = 14f;
     [SerializeField] private float _jumpSpeed = 4f;
     [SerializeField] private float _jumpHeight = 2f;
 
+    [SerializeField] private Transform _lidarPoint;
     [SerializeField] private float _maximumDistanceToCrossWalk = 5f;
 
     private PlayerController _playerController;
+    private GameObject _particleSystem;
 
-    private const float EPS = 0.1f;
+    private Vector3 _directionToRoad = Vector3.zero;
+
+    private const float EPS = 0.2f;
 
     private void Start()
     {
@@ -36,6 +43,8 @@ public class Boots : MonoBehaviour
             MakeIconGrey();
             return;
         }
+
+        _directionToRoad = other.transform.right;
         _canJump = CanJump();
         if (_canJump)
             MakeIconWhite();
@@ -45,14 +54,20 @@ public class Boots : MonoBehaviour
 
     private bool CanJump()
     {
-        RaycastHit hit;
-        if (!Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+        if (_directionToRoad.magnitude == 0)
         {
             return false;
         }
 
-        if (hit.transform.tag != "CrossWalk")
+        RaycastHit hit;
+        if (!Physics.Raycast(_lidarPoint.position, _directionToRoad, out hit))
         {
+            return false;
+        }
+
+        if (!hit.transform.CompareTag("CrossWalk") && !hit.transform.CompareTag("Fence"))
+        {
+            Debug.Log(hit.transform.tag);
             return false;
         }
 
@@ -97,7 +112,7 @@ public class Boots : MonoBehaviour
 
     private void PlayerJump()
     {
-        Vector3 destination = transform.position + transform.forward * _jump;
+        Vector3 destination = transform.position + _directionToRoad * _jump;
         StartCoroutine(JumpCoroutine(destination));
         _canJump = false;
         _bootsIcon.gameObject.SetActive(false);
@@ -106,31 +121,34 @@ public class Boots : MonoBehaviour
 
     private IEnumerator JumpCoroutine(Vector3 jumpDestination)
     {
-        _playerController.enabled = false;
-
-        transform.Translate(new Vector3(0, _jumpHeight, 0));
+        PrepareForFly();
         jumpDestination = jumpDestination + new Vector3(0, _jumpHeight, 0);
-
-        var particleSystem = Instantiate(_jumpParticleSystem, transform);
 
         while (Vector3.Distance(transform.position, jumpDestination) > EPS)
         {
-            Debug.Log(Vector3.Distance(transform.position, jumpDestination));
-
-            Vector3 movement = _jumpSpeed * Time.deltaTime * transform.forward;
+            Vector3 movement = _jumpSpeed * Time.deltaTime * _directionToRoad;
 
             transform.Translate(movement, Space.World);
-            //particleSystem.transform.Translate(movement, Space.World);
 
             yield return null;
         }
 
-        Destroy(particleSystem);
-        
+        StopFlying();
+    }
+
+    private void PrepareForFly()
+    {
+        _playerController.enabled = false;
+        transform.Translate(new Vector3(0, _jumpHeight, 0));
+        _wheels.SetActive(false);
+        _turbines.SetActive(true);
+    }
+
+    private void StopFlying()
+    {
         transform.Translate(new Vector3(0, -_jumpHeight, 0));
-
+        _wheels.SetActive(true);
+        _turbines.SetActive(false);
         _playerController.enabled = true;
-
-        Debug.Log("Stop moving");
     }
 }

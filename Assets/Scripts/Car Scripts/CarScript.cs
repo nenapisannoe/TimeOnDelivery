@@ -62,6 +62,11 @@ public class CarScript : CarFollowingPath
             return nextCar.Stoped && (hit.distance < movement.magnitude + nextCar.CarWidth);
         }
 
+        if (hitObjectTag == "Bus")
+        {
+            return hit.distance < movement.magnitude + 10f;
+        }
+
         return false;
     }
 }
