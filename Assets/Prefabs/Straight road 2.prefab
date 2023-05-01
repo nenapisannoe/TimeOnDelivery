@@ -480,6 +480,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fance
       objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1044443
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Center.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Center.z
+      value: -0.05222401
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
 --- !u!4 &4074987380460820901 stripped
@@ -1452,6 +1464,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fance (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.0956379
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Center.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Center.z
+      value: -0.04782008
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
 --- !u!4 &6048858278383696381 stripped
@@ -1518,6 +1542,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fance (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1066281
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Center.z
+      value: -0.053315055
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
 --- !u!4 &7218433412155245440 stripped
@@ -1583,6 +1615,14 @@ PrefabInstance:
     - target: {fileID: 4068797033951974689, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
       propertyPath: m_Name
       value: Fance (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1081338
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031870647305759992, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
+      propertyPath: m_Center.z
+      value: -0.054068808
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed8a7c419e9bb248825c416b7a5732b, type: 3}
