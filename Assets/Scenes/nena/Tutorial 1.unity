@@ -178,6 +178,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 832391206390997870, guid: 4cab032264d01644b915a30a96516bd6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9026029
+      objectReference: {fileID: 0}
+    - target: {fileID: 832391206390997870, guid: 4cab032264d01644b915a30a96516bd6, type: 3}
+      propertyPath: m_Size.z
+      value: 0.8539869
+      objectReference: {fileID: 0}
+    - target: {fileID: 832391206390997870, guid: 4cab032264d01644b915a30a96516bd6, type: 3}
+      propertyPath: m_Center.x
+      value: -0.02233078
+      objectReference: {fileID: 0}
+    - target: {fileID: 832391206390997870, guid: 4cab032264d01644b915a30a96516bd6, type: 3}
+      propertyPath: m_Center.z
+      value: -0.023433626
+      objectReference: {fileID: 0}
     - target: {fileID: 1734399268982026586, guid: 4cab032264d01644b915a30a96516bd6, type: 3}
       propertyPath: m_Name
       value: Store

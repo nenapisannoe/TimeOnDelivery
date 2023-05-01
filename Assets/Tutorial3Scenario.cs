@@ -18,8 +18,16 @@ public class Tutorial3Scenario : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (step4done)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+        
         if (!step2done && _player.cargoPicked)
         {
             StepTwo();
@@ -38,13 +46,7 @@ public class Tutorial3Scenario : MonoBehaviour
             step4done = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (step4done)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-        }
+
     }
 
     private void StepFour()

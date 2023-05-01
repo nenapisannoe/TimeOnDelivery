@@ -25,8 +25,16 @@ public class Tutorial2Scenario : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (step6done)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+        
         if (!step2done && _player.cargoPicked )
         {
             powerup.SetActive(true);
@@ -55,13 +63,6 @@ public class Tutorial2Scenario : MonoBehaviour
         {
             TutorialText.text = "Excellent! The package has been delivered! Time for your next task. If you want to start the level again, press 'R', and if you are ready to get to work, press Space. Good luck! ";
             step6done = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (step6done)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
         }
     }
 
