@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(GameConfig.instance.currentLevel + 1);
     }
+    
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(GameConfig.instance.currentLevel);
+    }
 
     public void QuitGame()
     {

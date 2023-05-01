@@ -50,17 +50,17 @@ public class GameConfig : MonoBehaviour
 
     public void AddScore(float score, int level)
     {
-        statistics[level - 1] = score;
+        statistics[level - 4] = score;
         currentLevel = level;
     }
 
     public Rating GetCurrentStat()
     {
-        return results[currentLevel-1];
+        return results[currentLevel-4];
     }
     
     public float GetCurrentRes()
     {
-        return statistics[currentLevel-1];
+        return statistics[currentLevel-4];
     }
 }

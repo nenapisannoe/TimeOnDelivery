@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6db454ae-4924-40b8-9e0e-6df5f4bd36b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power ups logic/Boots.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power ups logic/Boots.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial2Scenario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial2Scenario.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/You win.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/You win.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
       <workItem from="1682788548683" duration="10269000" />
       <workItem from="1682929037989" duration="7142000" />
       <workItem from="1682936942639" duration="1785000" />
-      <workItem from="1682938946938" duration="5318000" />
+      <workItem from="1682938946938" duration="5847000" />
     </task>
     <servers />
   </component>
