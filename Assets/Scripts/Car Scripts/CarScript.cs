@@ -25,7 +25,7 @@ public class CarScript : CarFollowingPath
         Vector3 movement = GetMovement();
 
         Stoped = ShouldStop(hit, movement);
-        
+
         if (!Stoped)
         {
             Move();
@@ -40,7 +40,7 @@ public class CarScript : CarFollowingPath
         }
 
         var hitObjectTag = hit.collider.tag;
-        
+
         if (hitObjectTag == "CrossWalk")
         {
             TraficController traficController = hit.collider.gameObject.GetComponent<TraficController>();
@@ -60,6 +60,11 @@ public class CarScript : CarFollowingPath
             }
 
             return nextCar.Stoped && (hit.distance < movement.magnitude + nextCar.CarWidth);
+        }
+
+        if (hitObjectTag == "Bus" || hitObjectTag == "BusGhost")
+        {
+            return hit.distance < movement.magnitude + 10f;
         }
 
         return false;
