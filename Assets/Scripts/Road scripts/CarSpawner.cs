@@ -75,7 +75,7 @@ public class CarSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        GameObject carObject = Instantiate(_carPrefab, _spawnPosition);
+        GameObject carObject = Instantiate(_carPrefab, _spawnPosition.position, _spawnPosition.rotation);
         CarScript carScript = carObject.GetComponent<CarScript>();
         if (carScript != null)
         {
