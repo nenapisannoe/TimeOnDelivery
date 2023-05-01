@@ -11,6 +11,9 @@ TagManager:
   - JumpZone
   - Bus stop
   - Line
+  - TutorialFinish
+  - Fence
+  - Bus
   layers:
   - Default
   - TransparentFX

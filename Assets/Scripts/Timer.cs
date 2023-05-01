@@ -7,38 +7,40 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] float timeLeft = 30.0f;
+    [SerializeField] float currentTime = 0.0f;
     [SerializeField] private Text timerText;
     private bool timeOver = false;
+    private DeliveryManager _deliveryManager;
 
     void Start()
     {
+        _deliveryManager = FindObjectOfType<DeliveryManager>();
         timeOver = false;
     }
     void Update()
     {
         if (!timeOver)
         {
-            timeLeft -= Time.deltaTime;
-            DisplayTime(timeLeft);
-            if (timeLeft <= 0)
-            {
-                timeOver = true;
-                GameOver();
-            }
+            currentTime += Time.deltaTime;
+            DisplayTime(currentTime);
         }
     }
     
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay += 1;
+        timeToDisplay -= 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    void GameOver()
+    public void StopTimer()
     {
-        SceneManager.LoadScene("GameOver");
+        timeOver = true;
+    }
+
+    public float GetScore()
+    {
+        return currentTime;
     }
 }

@@ -6,21 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/nena/You win.unity
-    guid: dbef7a9a02fa2f14b88bf02f75820711
+    path: Assets/Scenes/MainMenu.unity
+    guid: bf14ecd6ce478a74da9f8161e6a6a52f
+  - enabled: 1
+    path: Assets/Scenes/nena/Tutorial 1.unity
+    guid: 8ba09536ecd3d69449b82e592212a387
+  - enabled: 1
+    path: Assets/Scenes/nena/Tutorial 3.unity
+    guid: 12c4db8d6a3625245b6029af40733a33
+  - enabled: 1
+    path: Assets/Scenes/nena/Tutorial 2.unity
+    guid: 5b84daaa96c0ab841b9ebd14daf177ee
+  - enabled: 1
+    path: Assets/Scenes/nena/Level 1 nena.unity
+    guid: 5443a39daae6a3543a6cb2a41c5a1b81
   - enabled: 1
     path: Assets/Scenes/nena/Timer.unity
     guid: aa6c368221d2a1849b109ca55457d71b
-  - enabled: 1
-    path: Assets/Scenes/nena/GameOver.unity
-    guid: a80ee2134256e9541bf38f6aa01f39fe
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: bf14ecd6ce478a74da9f8161e6a6a52f
   - enabled: 1
     path: Assets/Scenes/CarsFollowingPaths.unity
     guid: 1b93eeee55f48fc4c931e1ad66c2185b
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 7f3e5b387f4dfcf47b8595dd40f92cac
+  - enabled: 1
+    path: Assets/Scenes/nena/GameOver.unity
+    guid: a80ee2134256e9541bf38f6aa01f39fe
+  - enabled: 1
+    path: Assets/Scenes/nena/You win.unity
+    guid: dbef7a9a02fa2f14b88bf02f75820711
   m_configObjects: {}

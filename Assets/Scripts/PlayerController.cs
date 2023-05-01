@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController: MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private float _rotationSpeed = 0.15f;
 
     [SerializeField] private float slowering = 2.0f;
-    private bool slowed = false;
+    public bool slowed = false;
 
     [SerializeField] private float _gravity = -9.8f;
     
     private CharacterController _characterController;
 
     private Vector2 _move;
+    
+
+    public bool ShouldSlowDownOnPuddle { get; set; } = true;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -34,12 +38,16 @@ public class PlayerController: MonoBehaviour
         _characterController = GetComponent<CharacterController>();
     }
 
-    void Update()
+    private void Update()
     {
         MovePlayer();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
-    void MovePlayer()
+    private void MovePlayer()
     {
         Vector3 movement = new Vector3(_move.x, 0.0f, _move.y);
 
@@ -50,8 +58,18 @@ public class PlayerController: MonoBehaviour
 
         movement.y = _gravity;
 
-        _characterController.Move(movement * _speed * Time.deltaTime);
+        _characterController.Move(movement * Speed() * Time.deltaTime);
         // transform.Translate(movement * _speed * Time.deltaTime, Space.World);
+    }
+
+    private float Speed()
+    {
+        if (slowed && ShouldSlowDownOnPuddle)
+        {
+            return _speed / slowering;
+        }
+
+        return _speed;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -69,13 +87,9 @@ public class PlayerController: MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Line")
+        if (other.tag == "Line" && ShouldSlowDownOnPuddle)
         {
-            if (!slowed)
-            {
-                _speed = _speed / slowering;
-                slowed = true;
-            }
+            slowed = true;
         }
     }
 
@@ -83,7 +97,6 @@ public class PlayerController: MonoBehaviour
     {
         if (other.tag == "Line")
         {
-            _speed = 8.0f;
             slowed = false;
         }
     }

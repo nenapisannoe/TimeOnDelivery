@@ -8,10 +8,14 @@ public class DeliveryManager : MonoBehaviour
 {
     [SerializeField] private GameObject bag;
     [SerializeField] public bool cargoPicked;
+    [SerializeField] public bool deliveredInTutorial;
+    private Timer _timer;
+    private float _score;
 
     private void Start()
     {
         cargoPicked = false;
+        _timer = FindObjectOfType<Timer>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,13 +31,27 @@ public class DeliveryManager : MonoBehaviour
         {
             if (cargoPicked)
             {
-                GameOver();
+                _timer.StopTimer();
+                OnLevelEnded();
+            }
+        }
+        
+        if (other.CompareTag("TutorialFinish"))
+        {
+            if (cargoPicked)
+            {
+                deliveredInTutorial = true;
             }
         }
     }
 
-    void GameOver()
+    public void GetScore(float d)
     {
+        _score = d;
+    }
+    public void OnLevelEnded()
+    {
+        GameConfig.instance.AddScore(_timer.GetScore(), SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("You win");
     }
     
