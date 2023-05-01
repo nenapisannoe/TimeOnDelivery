@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6db454ae-4924-40b8-9e0e-6df5f4bd36b1" name="Changes" comment="" />
+    <list default="true" id="6db454ae-4924-40b8-9e0e-6df5f4bd36b1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TimeOnDelivery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Boots.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Boots.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/nena/Tutorial 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial2Scenario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial2Scenario.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +77,8 @@
       <workItem from="1682788548683" duration="10269000" />
       <workItem from="1682929037989" duration="7142000" />
       <workItem from="1682936942639" duration="1785000" />
-      <workItem from="1682938946938" duration="9123000" />
+      <workItem from="1682938946938" duration="9906000" />
+      <workItem from="1682969284137" duration="1831000" />
     </task>
     <servers />
   </component>
