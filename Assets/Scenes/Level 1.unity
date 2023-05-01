@@ -4352,7 +4352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593469011137292233, guid: b352ded04a459ad439dd6b6c5f8caed4, type: 3}
       propertyPath: m_Name
-      value: JetPack 1
+      value: JetPack Boost
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b352ded04a459ad439dd6b6c5f8caed4, type: 3}
@@ -8718,7 +8718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6566414751781719773, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
       propertyPath: timeLeft
-      value: 12.5
+      value: 12.3
       objectReference: {fileID: 0}
     - target: {fileID: 6566414751781719773, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
       propertyPath: timerText
@@ -8726,7 +8726,7 @@ PrefabInstance:
       objectReference: {fileID: 747385960}
     - target: {fileID: 6566414751781719773, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
       propertyPath: timePeriod
-      value: 14
+      value: 13.4
       objectReference: {fileID: 0}
     - target: {fileID: 8489998833334212306, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
       propertyPath: m_Name
@@ -20282,6 +20282,10 @@ PrefabInstance:
     - target: {fileID: 1231648414415111843, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566414751781719773, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
+      propertyPath: timePeriod
+      value: 13.4
       objectReference: {fileID: 0}
     - target: {fileID: 8489998833334212306, guid: e9dc8b74d47f1c340a19abaa723cafee, type: 3}
       propertyPath: m_Name
