@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TiresBoost
       objectReference: {fileID: 0}
-    - target: {fileID: 8708372343558965176, guid: efd0baad424e0944a8a43e295a409c22, type: 3}
-      propertyPath: buff
-      value: Ghost
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0baad424e0944a8a43e295a409c22, type: 3}
 --- !u!1001 &369734044
