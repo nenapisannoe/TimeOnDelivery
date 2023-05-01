@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &692587689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &816758057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -817,8 +817,6 @@ GameObject:
   - component: {fileID: 5244603068352391801}
   - component: {fileID: 5244603068352391750}
   - component: {fileID: 729440893}
-  - component: {fileID: 3320379414571788973}
-  - component: {fileID: 1821998769741843973}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -843,7 +841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 58.1, y: 434.7}
+  m_AnchoredPosition: {x: -825, y: 442}
   m_SizeDelta: {x: 99.663086, y: 41.85193}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5244603068352391801
@@ -878,7 +876,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 38
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 1
@@ -889,34 +887,6 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 0:00
 --- !u!114 &729440893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5244603068352391748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcf26bd5162da84381cc05137719e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTime: 0
-  timerText: {fileID: 5244603068352391750}
---- !u!114 &3320379414571788973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5244603068352391748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcf26bd5162da84381cc05137719e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTime: 0
-  timerText: {fileID: 5244603068352391750}
---- !u!114 &1821998769741843973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -965,7 +935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 805, y: 401}
+  m_AnchoredPosition: {x: 795, y: 379.07}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5244603069309562001
@@ -996,7 +966,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 4ffac40fc20ee984fb85f91ef2d6366d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
