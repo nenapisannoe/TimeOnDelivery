@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/nena/Tutorial 2.unity
     guid: 5b84daaa96c0ab841b9ebd14daf177ee
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 7f3e5b387f4dfcf47b8595dd40f92cac
-  - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: c129425241cd52349a3eeaf61fb06546
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 7f3e5b387f4dfcf47b8595dd40f92cac
   - enabled: 1
     path: Assets/Scenes/nena/You win.unity
     guid: dbef7a9a02fa2f14b88bf02f75820711

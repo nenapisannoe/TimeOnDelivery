@@ -4905,7 +4905,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 729215869}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlaySecondLevel
+        m_MethodName: PlayFirstLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16476,7 +16476,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 729215869}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayFirstLevel
+        m_MethodName: PlaySecondLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
