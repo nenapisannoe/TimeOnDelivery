@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        if (GameConfig.instance.currentLevel == 2)
+        if (GameConfig.instance.currentLevel == 5)
         {
             SceneManager.LoadScene(0);
         }

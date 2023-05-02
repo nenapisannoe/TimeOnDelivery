@@ -44,7 +44,7 @@ public class Tutorial1Scenario : MonoBehaviour
 
     private void StepTwo()
     {
-        TutorialText.text = "Good! Now, deliver the package to the blue building.";
+        TutorialText.text = "Good! Now, deliver the package to the blue building (specifically to the door).";
     }
     private void StepThree()
     {
